@@ -1,19 +1,29 @@
 from tkinter import *
 import random
+import ImagesHelper
 
 class RockSimulationForm(Toplevel):
     def __init__(self,master=None):
         super().__init__(master=master)
         self.title("Rock Paper Scissors Simulation")
-        self.geometry("120x70")
+        self.geometry("225x150")
         compMove = computerMoveGenerator()
+        global rockImage
+        global paperImage
+        global scissorsImage
+        global compImage
+
+        rockImage = ImagesHelper.GetImage("Rock")
 
         if compMove == "Rock":
-            outcome = "Tie"
+            outcome = "You Tied!"
+            compImage = ImagesHelper.GetImage("Rock")
         elif compMove == "Paper":
-            outcome = "Lose"
+            outcome = "You Lose!"
+            compImage = ImagesHelper.GetImage("Paper")
         elif compMove == "Scissors":
-            outcome = "Win"
+            outcome = "You Win!!!"
+            compImage = ImagesHelper.GetImage("Scissors")
         else:
             print("Error: Tie/Win/Lose could not be determined")
             outcome = "Error"
@@ -21,8 +31,8 @@ class RockSimulationForm(Toplevel):
         playerLabel = Label(self,text="Player").grid(row=0,column=0)
         computerLabel = Label(self,text="Computer").grid(row=0,column=2)
 
-        playerChoiceLabel = Label(self,text="Rock").grid(row=1,column=0)
-        computerChoiceLabel = Label(self,text=compMove).grid(row=1,column=2)
+        playerChoiceLabel = Label(self,image=rockImage).grid(row=1,column=0)
+        computerChoiceLabel = Label(self,image=compImage).grid(row=1,column=2)
 
         winLoseLabel = Label(self,text=outcome).grid(row=2,column=1)
 
@@ -30,15 +40,24 @@ class PaperSimulationForm(Toplevel):
     def __init__(self,master=None):
         super().__init__(master=master)
         self.title("Rock Paper Scissors Simulation")
-        self.geometry("120x70")
+        self.geometry("225x150")
         compMove = computerMoveGenerator()
+        global rockImage
+        global paperImage
+        global scissorsImage
+        global compImage
+
+        paperImage = ImagesHelper.GetImage("Paper")
 
         if compMove == "Rock":
-            outcome = "Win"
+            outcome = "You Win!!!"
+            compImage = ImagesHelper.GetImage("Rock")
         elif compMove == "Paper":
-            outcome = "Tie"
+            outcome = "You Tied!"
+            compImage = ImagesHelper.GetImage("Paper")
         elif compMove == "Scissors":
-            outcome = "Lose"
+            outcome = "You Lose!"
+            compImage = ImagesHelper.GetImage("Scissors")
         else:
             print("Error: Tie/Win/Lose could not be determined")
             outcome = "Error"
@@ -46,8 +65,8 @@ class PaperSimulationForm(Toplevel):
         playerLabel = Label(self,text="Player").grid(row=0,column=0)
         computerLabel = Label(self,text="Computer").grid(row=0,column=2)
 
-        playerChoiceLabel = Label(self,text="Paper").grid(row=1,column=0)
-        computerChoiceLabel = Label(self,text=compMove).grid(row=1,column=2)
+        playerChoiceLabel = Label(self,image=paperImage).grid(row=1,column=0)
+        computerChoiceLabel = Label(self,image=compImage).grid(row=1,column=2)
 
         winLoseLabel = Label(self,text=outcome).grid(row=2,column=1)
 
@@ -55,15 +74,24 @@ class ScissorsSimulationForm(Toplevel):
     def __init__(self,master=None):
         super().__init__(master=master)
         self.title("Rock Paper Scissors Simulation")
-        self.geometry("120x70")
+        self.geometry("225x150")
         compMove = computerMoveGenerator()
+        global rockImage
+        global paperImage
+        global scissorsImage
+        global compImage
+
+        scissorsImage = ImagesHelper.GetImage("Scissors")
 
         if compMove == "Rock":
-            outcome = "Lose"
+            outcome = "You Lose!"
+            compImage = ImagesHelper.GetImage("Rock")
         elif compMove == "Paper":
-            outcome = "Win"
+            outcome = "You Win!!!"
+            compImage = ImagesHelper.GetImage("Paper")
         elif compMove == "Scissors":
-            outcome = "Tie"
+            outcome = "You Tied!"
+            compImage = ImagesHelper.GetImage("Scissors")
         else:
             print("Error: Tie/Win/Lose could not be determined")
             outcome = "Error"
@@ -71,8 +99,8 @@ class ScissorsSimulationForm(Toplevel):
         playerLabel = Label(self,text="Player").grid(row=0,column=0)
         computerLabel = Label(self,text="Computer").grid(row=0,column=2)
 
-        playerChoiceLabel = Label(self,text="Scissors").grid(row=1,column=0)
-        computerChoiceLabel = Label(self,text=compMove).grid(row=1,column=2)
+        playerChoiceLabel = Label(self,image=scissorsImage).grid(row=1,column=0)
+        computerChoiceLabel = Label(self,image=compImage).grid(row=1,column=2)
 
         winLoseLabel = Label(self,text=outcome).grid(row=2,column=1)
 

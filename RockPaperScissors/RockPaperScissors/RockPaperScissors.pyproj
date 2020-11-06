@@ -24,6 +24,9 @@
     <Compile Include="ChoiceSelection.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ImagesHelper.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="RockPaperScissors.py" />
     <Compile Include="Simulation.py">
       <SubType>Code</SubType>
