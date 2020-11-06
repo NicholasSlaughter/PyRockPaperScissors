@@ -7,7 +7,7 @@ class ChoiceSelectionForm(Toplevel):
     def __init__(self,master=None):
         super().__init__(master=master)
         self.title("Choice Selection")
-        self.geometry("350x200")
+        self.geometry("350x125")
         choiceLabel = Label(self,text="Please select which you will use")
         choiceLabel.grid(row=0,column=1);
 

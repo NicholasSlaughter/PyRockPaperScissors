@@ -4,7 +4,7 @@ import ChoiceSelection;
 def main():
     root = Tk();
     root.title('Rock Paper Scissors in Python');
-    root.geometry("300x100");
+    root.geometry("300x75");
 
     welcomeLabel = Label(root, text="Welcome to Rock Paper Scissors in Python");
     welcomeLabel.pack();
